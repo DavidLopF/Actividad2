@@ -1,33 +1,63 @@
 package co.edu.unbosque.model;
 
+import java.util.Random;
+
 public class PilaEstatica implements IPilaEnteros {
+    private int pila[];
+    private int cima;
+
+    public PilaEstatica(int size) {
+        pila = new int[size];
+        cima = -1;
+
+    }
+
     @Override
     public void push(int element) {
-
+        cima++;
+        pila[cima] = element;
     }
 
     @Override
     public int pop() {
-        return 0;
+        int aux = pila[cima];
+        cima--;
+        return aux;
     }
 
     @Override
     public int getTop() {
-        return 0;
+        return pila[cima];
     }
 
     @Override
     public int getNumberOfElements() {
-        return 0;
+        return cima;
     }
 
     @Override
     public boolean isFull() {
-        return false;
+        return pila.length - 1 == cima;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return cima == -1;
+
+    }
+
+    public void pushRandom() {
+        for (int i = 0; i < pila.length; i++) {
+            Random rnd = new Random();
+            push(rnd.nextInt(1000));
+        }
+    }
+
+    public String imprimirPila() {
+        String r = "";
+        for (int i = 0; i < pila.length; i++) {
+            r += pila[i] + " ";
+        }
+        return r;
     }
 }
