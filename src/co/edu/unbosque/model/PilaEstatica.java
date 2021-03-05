@@ -21,6 +21,7 @@ public class PilaEstatica implements IPilaEnteros {
     @Override
     public int pop() {
         int aux = pila[cima];
+        pila[cima] = 0;
         cima--;
         return aux;
     }
@@ -32,7 +33,7 @@ public class PilaEstatica implements IPilaEnteros {
 
     @Override
     public int getNumberOfElements() {
-        return cima;
+        return cima + 1;
     }
 
     @Override
@@ -55,9 +56,13 @@ public class PilaEstatica implements IPilaEnteros {
 
     public String imprimirPila() {
         String r = "";
-        for (int i = 0; i < pila.length; i++) {
-            r += pila[i] + " ";
+        for (int i = pila.length-1; i > -1; i--) {
+            r += pila[i] + "\n";
         }
         return r;
+    }
+
+    public int[] getPila() {
+        return pila;
     }
 }

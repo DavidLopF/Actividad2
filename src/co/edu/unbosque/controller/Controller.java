@@ -1,12 +1,8 @@
 package co.edu.unbosque.controller;
 
-import co.edu.unbosque.model.IPilaEnteros;
 import co.edu.unbosque.model.PilaEstatica;
 import co.edu.unbosque.view.View;
 
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Position;
-import java.awt.*;
 
 public class Controller {
 
@@ -28,17 +24,11 @@ public class Controller {
                 pilaEstatica = new PilaEstatica(size);
                 vista.mostrarMensaje("Pila Creada con exito.");
                 opcionesPila();
-
                 break;
 
             case "Salir":
                 vista.mostrarMensaje("Hasta pronto :)");
                 break;
-            default:
-                vista.mostrarMensaje("Hasta pronto :)");
-                break;
-
-
         }
     }
 
@@ -66,6 +56,38 @@ public class Controller {
                     vista.mostrarMensaje("Para llenar la pila con números aletorios debe estar vacia.");
                     opcionesPila();
                 }
+                break;
+
+            case "3. Remover elemento en la cima de la pila":
+                if (!pilaEstatica.isEmpty()) {
+                    vista.mostrarMensaje("El elemento " + pilaEstatica.pop() + " a sido removido con exito\n\n" + "La pila es:  \n" + pilaEstatica.imprimirPila());
+                    opcionesPila();
+                } else {
+                    vista.mostrarMensaje("La pila esta vacia, no hay elementos a desapilar.");
+                    opcionesPila();
+                }
+                break;
+            case "4. Optener número de elementos de la pila ":
+                vista.mostrarMensaje("EL tamaño de la pila es " + pilaEstatica.getPila().length + " y tiene " + pilaEstatica.getNumberOfElements()
+                        + " elementos apilados");
+                opcionesPila();
+                break;
+            case "5. Indicar si la pila esta llena":
+                if (pilaEstatica.isFull()) {
+                    vista.mostrarMensaje("La pila esta llena");
+                } else {
+                    vista.mostrarMensaje("La pila no esta llena");
+                }
+                opcionesPila();
+                break;
+            case "6. Indicar si la pila esta vacia":
+                if (pilaEstatica.isEmpty()) {
+                    vista.mostrarMensaje("La pila esta vacia");
+                } else {
+                    vista.mostrarMensaje("La pila no esta vacia");
+                }
+                opcionesPila();
+                break;
         }
     }
 

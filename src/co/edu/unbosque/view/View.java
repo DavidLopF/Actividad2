@@ -36,14 +36,20 @@ public class View {
         Object[] opciones = {"1. Pila Estatica", "2. Cola Dinamica", "Salir"};
         Object opcion = JOptionPane.showInputDialog(null, "      ..:Bienvenido señor usuario :..                " + "\n\n\nSelecciona un operacion a realizar:    ", "Elegir",
                 JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+        if(opcion == null){
+            mostrarMensaje("Hasta Pronto");
+        }
         return opcion.toString();
     }
 
     public String menuPilaEstatica() {
-        Object[] opciones = {"1. Agregar elemento a la pila" , "2. LLenar pila con número aleatorios", "3.Remover elemento en la cima de la pila", "4. Optener número de elementos de la pila ",
-                "5. Indicar si la pila esta llena","6. Indicar si la pila esta vacia " ,"Salir"};
+        Object[] opciones = {"1. Agregar elemento a la pila" , "2. LLenar pila con número aleatorios", "3. Remover elemento en la cima de la pila",
+                "4. Optener número de elementos de la pila ", "5. Indicar si la pila esta llena","6. Indicar si la pila esta vacia " ,"Salir"};
         Object opcion = JOptionPane.showInputDialog(null, "\nSelecciona un operacion a realizar:\n\n", "Elegir",
                 JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+        if(opcion == null){
+            mostrarMensaje("Hasta Pronto");
+        }
         return opcion.toString();
     }
 }
