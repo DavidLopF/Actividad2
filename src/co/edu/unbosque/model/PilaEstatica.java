@@ -56,7 +56,7 @@ public class PilaEstatica implements IPilaEnteros {
 
     public String imprimirPila() {
         String r = "";
-        for (int i = pila.length-1; i > -1; i--) {
+        for (int i = pila.length - 1; i > -1; i--) {
             r += pila[i] + "\n";
         }
         return r;

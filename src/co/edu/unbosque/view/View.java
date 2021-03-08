@@ -52,6 +52,17 @@ public class View {
         }
         return opcion.toString();
     }
+
+    public String menucola() {
+        Object[] opciones = {"1. Encolar elemento" , "2. Desencolar elemennto", "3. Obtener primer elemento de la cola ",
+                "4. Optener número de elementos de la cola ", "5. Indicar si la cola esta llena","6. Indicar si la cola esta vacia " ,"Salir"};
+        Object opcion = JOptionPane.showInputDialog(null, "\nSelecciona un operacion a realizar:\n\n", "Elegir",
+                JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+        if(opcion == null){
+            mostrarMensaje("Hasta Pronto");
+        }
+        return opcion.toString();
+    }
 }
 
 

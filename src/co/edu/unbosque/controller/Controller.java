@@ -1,5 +1,6 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.model.ColaReales;
 import co.edu.unbosque.model.PilaEstatica;
 import co.edu.unbosque.view.View;
 
@@ -7,6 +8,7 @@ import co.edu.unbosque.view.View;
 public class Controller {
 
     private PilaEstatica pilaEstatica;
+    private ColaReales colaReales;
     private View vista;
 
     public Controller() {
@@ -26,10 +28,21 @@ public class Controller {
                 opcionesPila();
                 break;
 
+            case "2. Cola Dinamica":
+                size = vista.caputrarDatoNumerico("Ingrese valor para el tamaño de la cola: ");
+                colaReales = new ColaReales(size);
+                vista.mostrarMensaje("cola Creada con exito.");
+
+                break;
+
             case "Salir":
                 vista.mostrarMensaje("Hasta pronto :)");
                 break;
         }
+    }
+
+    private void opcionesCola(){
+
     }
 
     private void opcionesPila() {
